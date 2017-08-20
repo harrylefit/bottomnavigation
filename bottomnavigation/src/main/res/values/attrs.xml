@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomNavigation">
+        <attr name="activeColor" format="color"/>
+        <attr name="inActiveColor" format="color"/>
+        <attr name="isScrollable" format="boolean"/>
+        <attr name="resMenu" format="reference"/>
+        <attr name="backgroundNavigation" format="color"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+</resources>
