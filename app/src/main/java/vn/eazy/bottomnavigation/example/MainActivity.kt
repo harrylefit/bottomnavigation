@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import harryle.eazy.vn.bottomnavigation.navigation.BottomNavigationAdapter
 import harryle.eazy.vn.bottomnavigation.navigation.OnNavigationListener
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
         val TAG: String = MainActivity.javaClass.simpleName;
     }
 
-    private val adapter: MainPagerAdapter by lazy { MainPagerAdapter(supportFragmentManager) }
+    private val adapter: BottomNavigationAdapter by lazy { BottomNavigationAdapter(supportFragmentManager) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
