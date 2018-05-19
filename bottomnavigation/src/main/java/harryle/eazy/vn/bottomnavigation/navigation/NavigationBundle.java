@@ -1,6 +1,7 @@
 package harryle.eazy.vn.bottomnavigation.navigation;
 
 import android.graphics.Color;
+import android.support.annotation.IdRes;
 import android.support.v4.view.ViewPager;
 
 /**
@@ -13,6 +14,12 @@ public class NavigationBundle {
     private boolean isScrollable;
     private int backgroundColor = Color.WHITE;
     private int textSize;
+    private int defaultSelectedPosition = 0;
+    private boolean enableRippleEffect = false;
+    private int mode = 1;
+    @IdRes
+    private int fontFamily;
+
     private OnNavigationListener onNavigationListener;
     private ViewPager viewPager;
 
@@ -70,5 +77,37 @@ public class NavigationBundle {
 
     public OnNavigationListener getOnNavigationListener() {
         return onNavigationListener;
+    }
+
+    public boolean isEnableRippleEffect() {
+        return enableRippleEffect;
+    }
+
+    public void setEnableRippleEffect(boolean enableRippleEffect) {
+        this.enableRippleEffect = enableRippleEffect;
+    }
+
+    public int getDefaultSelectedPosition() {
+        return defaultSelectedPosition;
+    }
+
+    public void setDefaultSelectedPosition(int defaultSelectedPosition) {
+        this.defaultSelectedPosition = defaultSelectedPosition;
+    }
+
+    public int getMode() {
+        return mode;
+    }
+
+    public void setMode(int mode) {
+        this.mode = mode;
+    }
+
+    public int getFontFamily() {
+        return fontFamily;
+    }
+
+    public void setFontFamily(int fontFamily) {
+        this.fontFamily = fontFamily;
     }
 }

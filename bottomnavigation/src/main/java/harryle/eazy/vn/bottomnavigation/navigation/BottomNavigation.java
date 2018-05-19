@@ -75,6 +75,9 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
                 mNavigationBundle.setScrollable(ta.getBoolean(R.styleable.BottomNavigation_isScrollable, false));
                 mNavigationBundle.setBackgroundColor(ta.getColor(R.styleable.BottomNavigation_backgroundNavigation, Color.WHITE));
                 mNavigationBundle.setTextSize(ta.getDimensionPixelSize(R.styleable.BottomNavigation_textSize, NavigationHelper.dpToPx(context, 14)));
+                mNavigationBundle.setDefaultSelectedPosition(ta.getInt(R.styleable.BottomNavigation_defaultSelectedPosition, 0));
+                mNavigationBundle.setMode(ta.getInt(R.styleable.BottomNavigation_mode, 1));
+                mNavigationBundle.setFontFamily(ta.getResourceId(R.styleable.BottomNavigation_textFontFamily, -1));
             } finally {
                 ta.recycle();
             }
@@ -162,10 +165,12 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
 
     @Override
     public void setupWithViewPager(ViewPager viewPager) {
-        this.mViewPager = viewPager;
-        this.mViewPager.addOnPageChangeListener(this);
-        mNavigationViewHolder.updateStateOfTabsMenu(0);
-        mNavigationBundle.setViewPager(this.mViewPager);
+        if (mNavigationBundle.getMode() == 0) {
+            this.mViewPager = viewPager;
+            this.mViewPager.addOnPageChangeListener(this);
+            mNavigationViewHolder.updateStateOfTabsMenu(0);
+            mNavigationBundle.setViewPager(this.mViewPager);
+        }
     }
 
     @Override
@@ -175,11 +180,17 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
 
     @Override
     public void onPageSelected(int position) {
-        mNavigationViewHolder.updateStateOfTabsMenu(position);
+        if (mNavigationBundle.getMode() == 0) {
+            mNavigationViewHolder.updateStateOfTabsMenu(position);
+        }
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    public int getCurrentPosition() {
+        return mNavigationViewHolder.getCurrentPosition();
     }
 }

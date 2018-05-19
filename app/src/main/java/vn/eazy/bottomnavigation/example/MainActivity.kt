@@ -1,8 +1,7 @@
 package vn.eazy.bottomnavigation.example
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import harryle.eazy.vn.bottomnavigation.navigation.BottomNavigationAdapter
 import harryle.eazy.vn.bottomnavigation.navigation.OnNavigationListener
@@ -10,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), OnNavigationListener {
     companion object {
-        val TAG: String = MainActivity.javaClass.simpleName;
+        val TAG: String = MainActivity.javaClass.simpleName
     }
 
     private val adapter: BottomNavigationAdapter by lazy { BottomNavigationAdapter(supportFragmentManager) }
@@ -29,16 +28,20 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
         nav.setupWithViewPager(vpMain)
         nav.setOnNavigationListener(this)
 
-        //Todo don't do like this (it's just a example)
-        Handler().postDelayed({
-            nav.hide()
-            Handler().postDelayed({
-                nav.show()
-            }, 2000)
-        }, 2000)
+        nav.show()
+        Log.d(TAG,"Current position : " + nav.currentPosition)
+
+//        //Todo don't do like this (it's just a example)
+//        Handler().postDelayed({
+//            nav.hide()
+//            Handler().postDelayed({
+//                nav.show()
+//            }, 2000)
+//        }, 2000)
     }
 
     override fun onClickNavigationItem(pos: Int) {
         Log.d(TAG, "Tab is clicked")
+        Log.d(TAG,"Current position : " + nav.currentPosition)
     }
 }

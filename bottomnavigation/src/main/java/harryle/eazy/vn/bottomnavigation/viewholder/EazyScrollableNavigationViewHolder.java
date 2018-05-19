@@ -21,7 +21,7 @@ public class EazyScrollableNavigationViewHolder extends NavigationViewHolder<Hor
     }
 
     @Override
-    protected ViewGroup createItem(MenuItem menuItem) {
+    protected ViewGroup createItem(MenuItem menuItem, int index) {
         LinearLayout lyItem = new LinearLayout(view.getContext());
         lyItem.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -44,6 +44,7 @@ public class EazyScrollableNavigationViewHolder extends NavigationViewHolder<Hor
             tvTitle.setText(menuItem.getTitle());
         }
         lyItem.addView(tvTitle);
+        lyItem.setTag(index);
         view.addView(lyItem);
         return lyItem;
     }

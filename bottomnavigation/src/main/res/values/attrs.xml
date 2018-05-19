@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="BottomNavigation">
-        <attr name="activeColor" format="color"/>
-        <attr name="inActiveColor" format="color"/>
-        <attr name="isScrollable" format="boolean"/>
-        <attr name="resMenu" format="reference"/>
-        <attr name="backgroundNavigation" format="color"/>
-        <attr name="textSize" format="dimension"/>
+        <attr name="activeColor" format="color" />
+        <attr name="inActiveColor" format="color" />
+        <attr name="isScrollable" format="boolean" />
+        <attr name="resMenu" format="reference" />
+        <attr name="backgroundNavigation" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textFontFamily" format="reference" />
+        <attr name="defaultSelectedPosition" format="integer|reference" />
+        <attr name="mode" format="enum">
+            <enum name="viewPager" value="0" />
+            <enum name="normal" value="1" />
+        </attr>
     </declare-styleable>
 </resources>

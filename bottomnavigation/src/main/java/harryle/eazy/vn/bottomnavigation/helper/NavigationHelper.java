@@ -2,17 +2,10 @@ package harryle.eazy.vn.bottomnavigation.helper;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.DisplayMetrics;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
 
 import harryle.eazy.vn.bottomnavigation.R;
 
@@ -32,7 +25,7 @@ public class NavigationHelper {
             try {
                 AppCompatImageView ivIcon = (AppCompatImageView) view.getTag(R.id.tagIcon);
                 if (ivIcon != null) {
-                    ivIcon.setSupportImageTintList(ColorStateList.valueOf(color));
+                    ivIcon.setImageTintList(ColorStateList.valueOf(color));
                 }
 
                 AppCompatTextView tvTitle = (AppCompatTextView) view.getTag(R.id.tagTitle);

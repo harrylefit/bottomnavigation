@@ -1,9 +1,8 @@
 package harryle.eazy.vn.bottomnavigation.viewholder;
 
-import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatImageHelper;
+import android.graphics.Typeface;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
@@ -24,12 +23,17 @@ import harryle.eazy.vn.bottomnavigation.navigation.NavigationBundle;
  */
 
 public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout> implements View.OnClickListener {
+    private Typeface typeface;
+
     public EazyNavigationViewHolder(Menu menu, LinearLayout view, NavigationBundle navigationBundle) {
         super(menu, view, navigationBundle);
+        if (navigationBundle.getFontFamily() != -1) {
+            typeface = ResourcesCompat.getFont(view.getContext(), navigationBundle.getFontFamily());
+        }
     }
 
     @Override
-    protected ViewGroup createItem(MenuItem menuItem) {
+    protected ViewGroup createItem(MenuItem menuItem, int index) {
         LinearLayout lyItem = new LinearLayout(view.getContext());
         lyItem.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -40,12 +44,13 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
         ivIcon = new AppCompatImageView(view.getContext());
         LinearLayout.LayoutParams lpIcon = new LinearLayout.LayoutParams(sizeOfIcon, sizeOfIcon);
         lpIcon.gravity = Gravity.CENTER;
+        lpIcon.bottomMargin = NavigationHelper.dpToPx(view.getContext(), 3);
         ivIcon.setLayoutParams(lpIcon);
         ivIcon.setAdjustViewBounds(true);
         if (menuItem.getIcon() != null) {
             ivIcon.setImageDrawable(menuItem.getIcon());
         }
-        ivIcon.setSupportImageTintMode(PorterDuff.Mode.SRC_IN);
+        ivIcon.setImageTintMode(PorterDuff.Mode.SRC_IN);
         lyItem.setTag(R.id.tagIcon, ivIcon);
 
         lyItem.addView(ivIcon);
@@ -62,18 +67,27 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
         }
 
         tvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, navigationBundle.getTextSize());
+        if (typeface != null) {
+            tvTitle.setTypeface(typeface);
+        }
         lyItem.setTag(R.id.tagTitle, tvTitle);
         lyItem.addView(tvTitle);
         view.addView(lyItem);
 
         NavigationHelper.refreshStateOfTabMenu(lyItem, navigationBundle.getInactiveColor());
+        lyItem.setTag(index);
         lyItem.setOnClickListener(this);
         return lyItem;
     }
 
     @Override
     public void onClick(View view) {
-        navigationBundle.getViewPager().setCurrentItem(tabsMenu.indexOf(view),true);
+        if (navigationBundle.getMode() == 0) {
+            navigationBundle.getViewPager().setCurrentItem(tabsMenu.indexOf(view), true);
+        } else {
+            int index = (int) view.getTag();
+            updateStateOfTabsMenu(index);
+        }
         if (navigationBundle.getOnNavigationListener() != null) {
             navigationBundle.getOnNavigationListener().onClickNavigationItem(tabsMenu.indexOf(view));
         }

@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="inactive_tab_menu">#929292</color>
-    <color name="active_tab_menu">#000000</color>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
+  <color name="inactive_tab_menu">#929292</color>
+  <color name="active_tab_menu">#000000</color>
+  <color name="white">#ffffff</color>
+  <color name="timberwolf">#d8d8d8</color>
+  <color name="celestialblue">#49a6dc</color>
+  <color name="celestialblue_1">#52b9f4</color>
+  <color name="darkjunglegreen">#0b1e30</color>
 </resources>
+

@@ -17,9 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:activeColor="@color/active_tab_menu"
-
-        app:backgroundNavigation="@android:color/white"
-        app:inActiveColor="@color/inactive_tab_menu"
+        app:activeColor="@android:color/white"
+        app:backgroundNavigation="@color/darkjunglegreen"
+        app:defaultSelectedPosition="0"
+        app:inActiveColor="#80FFFFFF"
+        app:mode="normal"
+        app:textFontFamily="@font/semibold"
         tools:layout_height="56dp" />
 </RelativeLayout>
