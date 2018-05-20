@@ -2,6 +2,7 @@ package harryle.eazy.vn.bottomnavigation.helper;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.DisplayMetrics;
@@ -25,7 +26,9 @@ public class NavigationHelper {
             try {
                 AppCompatImageView ivIcon = (AppCompatImageView) view.getTag(R.id.tagIcon);
                 if (ivIcon != null) {
+                    ivIcon.setColorFilter(color, PorterDuff.Mode.SRC_IN);
                     ivIcon.setImageTintList(ColorStateList.valueOf(color));
+                    ivIcon.setImageTintMode(PorterDuff.Mode.SRC_IN);
                 }
 
                 AppCompatTextView tvTitle = (AppCompatTextView) view.getTag(R.id.tagTitle);
