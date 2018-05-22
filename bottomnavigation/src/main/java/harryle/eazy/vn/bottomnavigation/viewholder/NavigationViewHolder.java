@@ -70,9 +70,11 @@ public abstract class NavigationViewHolder<V extends ViewGroup> {
             for (ViewGroup item : tabsMenu) {
                 if (selectedPosition == tabsMenu.indexOf(item)) {
                     currentPosition = selectedPosition;
-                    NavigationHelper.refreshStateOfTabMenu(item, navigationBundle.getActiveColor(), true);
+                    NavigationHelper.refreshStateOfTabMenu(item, navigationBundle.getActiveColor()
+                            , true, navigationBundle.isEnableTintColor());
                 } else {
-                    NavigationHelper.refreshStateOfTabMenu(item, navigationBundle.getInactiveColor(), false);
+                    NavigationHelper.refreshStateOfTabMenu(item, navigationBundle.getInactiveColor()
+                            , false, navigationBundle.isEnableTintColor());
                 }
             }
         }

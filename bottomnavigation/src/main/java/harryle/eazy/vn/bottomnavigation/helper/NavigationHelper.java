@@ -21,14 +21,16 @@ public class NavigationHelper {
     }
 
 
-    public static void refreshStateOfTabMenu(ViewGroup view, int color, boolean isSelected) {
+    public static void refreshStateOfTabMenu(ViewGroup view, int color, boolean isSelected, boolean enableTintColor) {
         if (view != null && view.getChildCount() > 0) {
             try {
                 AppCompatImageView ivIcon = (AppCompatImageView) view.getTag(R.id.tagIcon);
                 if (ivIcon != null) {
-                    ivIcon.setColorFilter(color, PorterDuff.Mode.SRC_IN);
-                    ivIcon.setImageTintList(ColorStateList.valueOf(color));
-                    ivIcon.setImageTintMode(PorterDuff.Mode.SRC_IN);
+                    if (enableTintColor) {
+                        ivIcon.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+                        ivIcon.setImageTintList(ColorStateList.valueOf(color));
+                        ivIcon.setImageTintMode(PorterDuff.Mode.SRC_IN);
+                    }
                     ivIcon.setSelected(isSelected);
                 }
 

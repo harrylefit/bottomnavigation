@@ -17,6 +17,8 @@ public class NavigationBundle {
     private int defaultSelectedPosition = 0;
     private boolean enableRippleEffect = false;
     private int mode = 1;
+    private boolean enableTintColor = true;
+
     @IdRes
     private int fontFamily;
 
@@ -109,5 +111,13 @@ public class NavigationBundle {
 
     public void setFontFamily(int fontFamily) {
         this.fontFamily = fontFamily;
+    }
+
+    public boolean isEnableTintColor() {
+        return enableTintColor;
+    }
+
+    public void setEnableTintColor(boolean enableTintColor) {
+        this.enableTintColor = enableTintColor;
     }
 }
