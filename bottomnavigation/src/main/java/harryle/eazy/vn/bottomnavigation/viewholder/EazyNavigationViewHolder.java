@@ -74,7 +74,7 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
         lyItem.addView(tvTitle);
         view.addView(lyItem);
 
-        NavigationHelper.refreshStateOfTabMenu(lyItem, navigationBundle.getInactiveColor());
+        NavigationHelper.refreshStateOfTabMenu(lyItem, navigationBundle.getInactiveColor(), false);
         lyItem.setTag(index);
         lyItem.setOnClickListener(this);
         return lyItem;

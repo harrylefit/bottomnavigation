@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:icon="@drawable/ic_newsfeed"
+        android:icon="@drawable/selector_news_feed"
         android:title="Tab 1" />
     <item
         android:icon="@drawable/ic_location"

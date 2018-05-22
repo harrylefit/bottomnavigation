@@ -21,7 +21,7 @@ public class NavigationHelper {
     }
 
 
-    public static void refreshStateOfTabMenu(ViewGroup view, int color) {
+    public static void refreshStateOfTabMenu(ViewGroup view, int color, boolean isSelected) {
         if (view != null && view.getChildCount() > 0) {
             try {
                 AppCompatImageView ivIcon = (AppCompatImageView) view.getTag(R.id.tagIcon);
@@ -29,11 +29,13 @@ public class NavigationHelper {
                     ivIcon.setColorFilter(color, PorterDuff.Mode.SRC_IN);
                     ivIcon.setImageTintList(ColorStateList.valueOf(color));
                     ivIcon.setImageTintMode(PorterDuff.Mode.SRC_IN);
+                    ivIcon.setSelected(isSelected);
                 }
 
                 AppCompatTextView tvTitle = (AppCompatTextView) view.getTag(R.id.tagTitle);
                 if (tvTitle != null) {
                     tvTitle.setTextColor(color);
+                    tvTitle.setSelected(isSelected);
                 }
             } catch (ClassCastException ex) {
                 ex.printStackTrace();
