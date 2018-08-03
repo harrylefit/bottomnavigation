@@ -76,14 +76,14 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
         if (typeface != null) {
             tvTitle.setTypeface(typeface);
         }
-        lyItem.setTag(R.id.tagTitle, tvTitle);
+        frameLayout.setTag(R.id.tagTitle, tvTitle);
         lyItem.addView(tvTitle);
         frameLayout.addView(lyItem);
 
         FrameLayout notificationView = (FrameLayout) LayoutInflater.from(view.getContext()).inflate(R.layout.view_tab, null);
         FrameLayout.LayoutParams notificationLp = new FrameLayout.LayoutParams(NavigationHelper.dpToPx(view.getContext(), 15), NavigationHelper.dpToPx(view.getContext(), 15));
-        notificationLp.rightMargin = NavigationHelper.dpToPx(view.getContext(), 10);
-        notificationLp.setMarginEnd(NavigationHelper.dpToPx(view.getContext(), 10));
+        notificationLp.rightMargin = NavigationHelper.dpToPx(view.getContext(), 15);
+        notificationLp.setMarginEnd(NavigationHelper.dpToPx(view.getContext(), 15));
         notificationLp.gravity = Gravity.RIGHT | Gravity.TOP;
         notificationView.setLayoutParams(notificationLp);
         frameLayout.addView(notificationView);
