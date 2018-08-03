@@ -79,6 +79,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
                 mNavigationBundle.setMode(ta.getInt(R.styleable.BottomNavigation_mode, 1));
                 mNavigationBundle.setFontFamily(ta.getResourceId(R.styleable.BottomNavigation_textFontFamily, -1));
                 mNavigationBundle.setEnableTintColor(ta.getBoolean(R.styleable.BottomNavigation_enableTintColor, true));
+                mNavigationBundle.setHasNotification(ta.getBoolean(R.styleable.BottomNavigation_hasNotification, false));
             } finally {
                 ta.recycle();
             }
@@ -162,6 +163,10 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
     @Override
     public void hideWithAnimation() {
 
+    }
+
+    public void updateNotification(int index, int number) {
+        mNavigationViewHolder.updateNotification(index,number);
     }
 
     @Override

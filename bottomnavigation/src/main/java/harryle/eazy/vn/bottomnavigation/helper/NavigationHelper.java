@@ -1,12 +1,15 @@
 package harryle.eazy.vn.bottomnavigation.helper;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import harryle.eazy.vn.bottomnavigation.R;
 
@@ -45,4 +48,21 @@ public class NavigationHelper {
         }
     }
 
+    @SuppressLint("SetTextI18n")
+    public static void updateNotification(ViewGroup view, int number) {
+        try {
+            if (view != null) {
+                FrameLayout frameLayout = view.findViewById(R.id.view_notification);
+                AppCompatTextView tvNotification = view.findViewById(R.id.tv_notification);
+                if (number == 0) {
+                    frameLayout.setVisibility(View.INVISIBLE);
+                } else {
+                    tvNotification.setText(number + "");
+                    frameLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

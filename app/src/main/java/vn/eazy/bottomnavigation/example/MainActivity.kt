@@ -1,6 +1,7 @@
 package vn.eazy.bottomnavigation.example
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import harryle.eazy.vn.bottomnavigation.navigation.BottomNavigationAdapter
@@ -32,12 +33,12 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
         Log.d(TAG,"Current position : " + nav.currentPosition)
 
 //        //Todo don't do like this (it's just a example)
-//        Handler().postDelayed({
-//            nav.hide()
-//            Handler().postDelayed({
-//                nav.show()
-//            }, 2000)
-//        }, 2000)
+        Handler().postDelayed({
+            nav.updateNotification(1,9)
+            Handler().postDelayed({
+                nav.updateNotification(1,0)
+            },2000)
+        }, 2000)
     }
 
     override fun onClickNavigationItem(pos: Int) {

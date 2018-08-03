@@ -8,10 +8,12 @@ import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import harryle.eazy.vn.bottomnavigation.R;
@@ -34,10 +36,13 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
 
     @Override
     protected ViewGroup createItem(MenuItem menuItem, int index) {
+        FrameLayout frameLayout = new FrameLayout(view.getContext());
+        LinearLayout.LayoutParams mainLp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
+        mainLp.weight = 1;
+        frameLayout.setLayoutParams(mainLp);
         LinearLayout lyItem = new LinearLayout(view.getContext());
         lyItem.setOrientation(LinearLayout.VERTICAL);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp.weight = 1;
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         lyItem.setLayoutParams(lp);
 
         //Todo create ImageView
@@ -72,12 +77,23 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
         }
         lyItem.setTag(R.id.tagTitle, tvTitle);
         lyItem.addView(tvTitle);
-        view.addView(lyItem);
+        frameLayout.addView(lyItem);
+
+        FrameLayout notificationView = (FrameLayout) LayoutInflater.from(view.getContext()).inflate(R.layout.view_tab, null);
+        FrameLayout.LayoutParams notificationLp = new FrameLayout.LayoutParams(NavigationHelper.dpToPx(view.getContext(), 15), NavigationHelper.dpToPx(view.getContext(), 15));
+        notificationLp.rightMargin = NavigationHelper.dpToPx(view.getContext(), 10);
+        notificationLp.setMarginEnd(NavigationHelper.dpToPx(view.getContext(), 10));
+        notificationLp.gravity = Gravity.RIGHT | Gravity.TOP;
+        notificationView.setLayoutParams(notificationLp);
+        frameLayout.addView(notificationView);
+        notificationView.setVisibility(View.INVISIBLE);
+        view.addView(frameLayout);
 
         NavigationHelper.refreshStateOfTabMenu(lyItem, navigationBundle.getInactiveColor(), false, navigationBundle.isEnableTintColor());
         lyItem.setTag(index);
         lyItem.setOnClickListener(this);
-        return lyItem;
+
+        return frameLayout;
     }
 
     @Override

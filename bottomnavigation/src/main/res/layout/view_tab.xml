@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/view_notification"
+    android:orientation="vertical"
+    tools:layout_height="20dp"
+    tools:layout_width="20dp">
+
+    <ImageView
+        android:id="@+id/iv_notification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_circle_notification" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_notification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="#ffffff"
+        android:textSize="10sp" />
+</FrameLayout>

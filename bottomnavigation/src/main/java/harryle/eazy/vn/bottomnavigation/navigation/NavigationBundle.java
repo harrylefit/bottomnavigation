@@ -24,6 +24,7 @@ public class NavigationBundle {
 
     private OnNavigationListener onNavigationListener;
     private ViewPager viewPager;
+    private boolean hasNotification = false;
 
     public ViewPager getViewPager() {
         return viewPager;
@@ -77,6 +78,10 @@ public class NavigationBundle {
         this.onNavigationListener = onNavigationListener;
     }
 
+    public boolean isHasNotification() {
+        return hasNotification;
+    }
+
     public OnNavigationListener getOnNavigationListener() {
         return onNavigationListener;
     }
@@ -119,5 +124,9 @@ public class NavigationBundle {
 
     public void setEnableTintColor(boolean enableTintColor) {
         this.enableTintColor = enableTintColor;
+    }
+
+    public void setHasNotification(boolean hasNotification) {
+        this.hasNotification = hasNotification;
     }
 }

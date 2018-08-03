@@ -83,4 +83,13 @@ public abstract class NavigationViewHolder<V extends ViewGroup> {
     public int getCurrentPosition() {
         return currentPosition;
     }
+
+    public void updateNotification(int index, int number) {
+        if (tabsMenu != null) {
+            ViewGroup view = tabsMenu.get(index);
+            if (view != null) {
+                NavigationHelper.updateNotification(view, number);
+            }
+        }
+    }
 }

@@ -14,5 +14,6 @@
             <enum name="viewPager" value="0" />
             <enum name="normal" value="1" />
         </attr>
+        <attr name="hasNotification" format="boolean" />
     </declare-styleable>
 </resources>
