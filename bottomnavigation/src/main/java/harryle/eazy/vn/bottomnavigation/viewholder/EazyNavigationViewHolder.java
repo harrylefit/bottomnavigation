@@ -37,6 +37,7 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
     @Override
     protected ViewGroup createItem(MenuItem menuItem, int index) {
         FrameLayout frameLayout = new FrameLayout(view.getContext());
+        frameLayout.setClickable(true);
         LinearLayout.LayoutParams mainLp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
         mainLp.weight = 1;
         frameLayout.setLayoutParams(mainLp);
@@ -56,7 +57,7 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
             ivIcon.setImageDrawable(menuItem.getIcon());
         }
         ivIcon.setImageTintMode(PorterDuff.Mode.SRC_IN);
-        lyItem.setTag(R.id.tagIcon, ivIcon);
+        frameLayout.setTag(R.id.tagIcon, ivIcon);
 
         lyItem.addView(ivIcon);
 
@@ -90,8 +91,8 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
         view.addView(frameLayout);
 
         NavigationHelper.refreshStateOfTabMenu(lyItem, navigationBundle.getInactiveColor(), false, navigationBundle.isEnableTintColor());
-        lyItem.setTag(index);
-        lyItem.setOnClickListener(this);
+        frameLayout.setTag(index);
+        frameLayout.setOnClickListener(this);
 
         return frameLayout;
     }

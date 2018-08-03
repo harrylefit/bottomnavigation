@@ -30,19 +30,19 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
         nav.setOnNavigationListener(this)
 
         nav.show()
-        Log.d(TAG,"Current position : " + nav.currentPosition)
+        Log.d(TAG, "Current position : " + nav.currentPosition)
 
 //        //Todo don't do like this (it's just a example)
         Handler().postDelayed({
-            nav.updateNotification(1,9)
+            nav.updateNotification(1, 9)
             Handler().postDelayed({
-                nav.updateNotification(1,0)
-            },2000)
+                nav.updateNotification(1, 0)
+            }, 2000)
         }, 2000)
     }
 
     override fun onClickNavigationItem(pos: Int) {
         Log.d(TAG, "Tab is clicked")
-        Log.d(TAG,"Current position : " + nav.currentPosition)
+        Log.d(TAG, "Current position : " + nav.currentPosition)
     }
 }
