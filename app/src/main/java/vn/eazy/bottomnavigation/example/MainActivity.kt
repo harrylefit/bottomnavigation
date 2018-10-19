@@ -37,8 +37,11 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
             nav.updateNotification(1, 9)
             Handler().postDelayed({
                 nav.updateNotification(1, 0)
+                nav.activeAllTabs()
             }, 2000)
         }, 2000)
+
+        nav.disableAllTabs()
     }
 
     override fun onClickNavigationItem(pos: Int) {

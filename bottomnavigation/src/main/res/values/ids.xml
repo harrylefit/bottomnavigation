@@ -2,4 +2,5 @@
 <resources>
     <item name="tagIcon" type="id"/>
     <item name="tagTitle" type="id"/>
+    <item name="tagPreventTouch" type="id"/>
 </resources>

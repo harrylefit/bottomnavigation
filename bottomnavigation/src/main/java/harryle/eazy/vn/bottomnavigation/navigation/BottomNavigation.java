@@ -155,11 +155,13 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
         setVisibility(GONE);
     }
 
+    @Deprecated
     @Override
     public void showWithAnimation() {
 
     }
 
+    @Deprecated
     @Override
     public void hideWithAnimation() {
 
@@ -167,6 +169,22 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
 
     public void updateNotification(int index, int number) {
         mNavigationViewHolder.updateNotification(index,number);
+    }
+
+    public void disableTabs(int... indexes){
+        mNavigationViewHolder.disableTabs(indexes);
+    }
+
+    public void activeTabs(int... indexes){
+        mNavigationViewHolder.activeTabs(indexes);
+    }
+
+    public void activeAllTabs(){
+        mNavigationViewHolder.activeAllTabs();
+    }
+
+    public void disableAllTabs(){
+        mNavigationViewHolder.disableAllTabs();
     }
 
     @Override

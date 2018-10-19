@@ -92,4 +92,44 @@ public abstract class NavigationViewHolder<V extends ViewGroup> {
             }
         }
     }
+
+    public void disableTabs(int... indexes) {
+        if (tabsMenu != null) {
+            for (int index : indexes) {
+                ViewGroup view = tabsMenu.get(index);
+                if (view != null) {
+                    view.setTag(R.id.tagPreventTouch, true);
+                }
+            }
+        }
+    }
+
+    public void activeTabs(int... indexes) {
+        if (tabsMenu != null) {
+            for (int index : indexes) {
+                ViewGroup view = tabsMenu.get(index);
+                if (view != null) {
+                    view.setTag(R.id.tagPreventTouch, false);
+                }
+            }
+        }
+    }
+
+    public void disableAllTabs() {
+        int[] indexes = getAllTabIndexes();
+        disableTabs(indexes);
+    }
+
+    public void activeAllTabs() {
+        int[] indexes = getAllTabIndexes();
+        activeTabs(indexes);
+    }
+
+    private int[] getAllTabIndexes() {
+        int[] indexes = new int[tabsMenu.size()];
+        for (int i = 0; i < tabsMenu.size(); i++) {
+            indexes[i] = i;
+        }
+        return indexes;
+    }
 }

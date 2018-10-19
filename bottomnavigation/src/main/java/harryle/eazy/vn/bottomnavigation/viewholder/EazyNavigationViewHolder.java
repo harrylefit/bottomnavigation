@@ -99,6 +99,9 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
 
     @Override
     public void onClick(View view) {
+        if (view.getTag(R.id.tagPreventTouch) != null && (boolean) view.getTag(R.id.tagPreventTouch)) {
+            return;
+        }
         if (navigationBundle.getMode() == 0) {
             navigationBundle.getViewPager().setCurrentItem(tabsMenu.indexOf(view), true);
         } else {
