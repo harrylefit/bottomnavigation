@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.ViewGroup;
@@ -29,17 +30,15 @@ import harryle.eazy.vn.bottomnavigation.viewholder.NavigationViewHolder;
  */
 
 public class BottomNavigation extends FrameLayout implements Navigation, ViewPager.OnPageChangeListener {
+    private final int DEFAULT_MENU_RES = -1;
     private @MenuRes
-    int mMenuRes = -1;
-    private RecyclerView mRecyclerView;
+    int mMenuRes = DEFAULT_MENU_RES;
     private ViewPager mViewPager;
     private Context mContext;
-    private Resources mResources;
     private ViewGroup mMainLayout;
     private Menu mMenu;
     private NavigationViewHolder mNavigationViewHolder;
     private NavigationBundle mNavigationBundle;
-
     public BottomNavigation(@NonNull Context context) {
         super(context);
         init(context, null);
@@ -61,7 +60,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
 
     private void init(Context context, AttributeSet attrs) {
         this.mContext = context;
-        this.mResources = context.getResources();
+        Resources mResources = context.getResources();
 
         if (mNavigationBundle == null) {
             mNavigationBundle = new NavigationBundle();
@@ -137,12 +136,10 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
 
     @Override
     public void attachToRecyclerView(RecyclerView rv) {
-        this.mRecyclerView = rv;
     }
 
     @Override
     public void detachFromRecyclerView() {
-        this.mRecyclerView = null;
     }
 
     @Override
@@ -158,13 +155,13 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
     @Deprecated
     @Override
     public void showWithAnimation() {
-
+        Log.d("BottomNavigation", "Coming soon");
     }
 
     @Deprecated
     @Override
     public void hideWithAnimation() {
-
+        Log.d("BottomNavigation", "Coming soon");
     }
 
     public void updateNotification(int index, int number) {
@@ -199,7 +196,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+        Log.d("BottomNavigation", "onPageScrolled");
     }
 
     @Override
@@ -215,7 +212,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
 
     @Override
     public void onPageScrollStateChanged(int state) {
-
+        Log.d("BottomNavigation", "onPageScrollStateChanged");
     }
 
     public int getCurrentPosition() {

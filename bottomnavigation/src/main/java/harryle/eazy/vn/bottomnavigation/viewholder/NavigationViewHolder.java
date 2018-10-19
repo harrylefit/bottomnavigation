@@ -1,6 +1,5 @@
 package harryle.eazy.vn.bottomnavigation.viewholder;
 
-import android.content.res.TypedArray;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.Menu;
@@ -55,14 +54,6 @@ public abstract class NavigationViewHolder<V extends ViewGroup> {
         if (navigationBundle.getMode() == 1) {
             updateStateOfTabsMenu(navigationBundle.getDefaultSelectedPosition());
         }
-    }
-
-    private int getRippleBackground() {
-        int[] attrs = new int[]{R.attr.selectableItemBackgroundBorderless};
-        TypedArray typedArray = view.getContext().obtainStyledAttributes(attrs);
-        int backgroundResource = typedArray.getResourceId(0, 0);
-        typedArray.recycle();
-        return backgroundResource;
     }
 
     public void updateStateOfTabsMenu(int selectedPosition) {

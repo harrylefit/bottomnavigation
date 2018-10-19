@@ -8,6 +8,9 @@ import harryle.eazy.vn.bottomnavigation.navigation.BottomNavigationAdapter
 import harryle.eazy.vn.bottomnavigation.navigation.OnNavigationListener
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Author Harry Le
+ */
 class MainActivity : AppCompatActivity(), OnNavigationListener {
     companion object {
         val TAG: String = MainActivity.javaClass.simpleName

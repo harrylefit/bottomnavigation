@@ -2,7 +2,7 @@
 Code base for Android
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bfbc1609da414e51a70057b4757089e5)](https://www.codacy.com/app/harryle-fit/bottomnavigation?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=harrylefit/bottomnavigation&amp;utm_campaign=Badge_Grade)
-[![codebeat badge](https://codebeat.co/badges/0b056c51-b0ee-4efe-8576-9c840ec3e103)](https://codebeat.co/projects/github-com-harrylefit-bottomnavigation-master)
+<!--[![codebeat badge](https://codebeat.co/badges/0b056c51-b0ee-4efe-8576-9c840ec3e103)](https://codebeat.co/projects/github-com-harrylefit-bottomnavigation-master)-->
 
 Usages
 ------
