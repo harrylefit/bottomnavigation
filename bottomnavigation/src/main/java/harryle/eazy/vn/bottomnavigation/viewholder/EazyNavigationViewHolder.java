@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import harryle.eazy.vn.bottomnavigation.R;
@@ -48,11 +49,12 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
 
         //Todo create ImageView
         ivIcon = new AppCompatImageView(view.getContext());
-        LinearLayout.LayoutParams lpIcon = new LinearLayout.LayoutParams(sizeOfIcon, sizeOfIcon);
+        LinearLayout.LayoutParams lpIcon = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, sizeOfIcon);
         lpIcon.gravity = Gravity.CENTER;
         lpIcon.bottomMargin = NavigationHelper.dpToPx(view.getContext(), 3);
         ivIcon.setLayoutParams(lpIcon);
         ivIcon.setAdjustViewBounds(true);
+        ivIcon.setScaleType(AppCompatImageView.ScaleType.FIT_CENTER);
         if (menuItem.getIcon() != null) {
             ivIcon.setImageDrawable(menuItem.getIcon());
         }
