@@ -4,6 +4,8 @@ This library allows you to show bottom navigation **quickly** and **simply**
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bfbc1609da414e51a70057b4757089e5)](https://www.codacy.com/app/harryle-fit/bottomnavigation?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=harrylefit/bottomnavigation&amp;utm_campaign=Badge_Grade)
 [![](https://jitpack.io/v/harrylefit/bottomnavigation.svg)](https://jitpack.io/#harrylefit/bottomnavigation)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Bottom%20Navigation-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7352)
+
 
 <p align="center"><a href="https://github.com/harrylefit/bottomnavigation" target="_blank"><img width="250"src="raw/example.gif"></a></p>
 
