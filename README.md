@@ -37,7 +37,7 @@ Download
 --------
 
 ```groovy
- implementation 'com.github.harrylefit:bottomnavigation:1.1.6'
+ implementation 'com.github.harrylefit:bottomnavigation:1.1.6.1'
 ```
 
 
