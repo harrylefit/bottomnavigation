@@ -40,7 +40,6 @@ Download
  implementation 'com.github.harrylefit:bottomnavigation:1.1.6'
 ```
 
-#Licence
 
 Apache License, Version 2.0
 
