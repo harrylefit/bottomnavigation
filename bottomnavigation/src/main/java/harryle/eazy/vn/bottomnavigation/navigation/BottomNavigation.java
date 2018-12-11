@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.MenuRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,6 +32,7 @@ import harryle.eazy.vn.bottomnavigation.viewholder.NavigationViewHolder;
 
 public class BottomNavigation extends FrameLayout implements Navigation, ViewPager.OnPageChangeListener {
     private final int DEFAULT_MENU_RES = -1;
+    private final String EXTRA_CRR_INDEX_TAB = BottomNavigation.class.getSimpleName() + "-CRR_INDEX_TAB";
     private @MenuRes
     int mMenuRes = DEFAULT_MENU_RES;
     private ViewPager mViewPager;
@@ -39,6 +41,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
     private Menu mMenu;
     private NavigationViewHolder mNavigationViewHolder;
     private NavigationBundle mNavigationBundle;
+
     public BottomNavigation(@NonNull Context context) {
         super(context);
         init(context, null);
@@ -165,22 +168,22 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
     }
 
     public void updateNotification(int index, int number) {
-        mNavigationViewHolder.updateNotification(index,number);
+        mNavigationViewHolder.updateNotification(index, number);
     }
 
-    public void disableTabs(int... indexes){
+    public void disableTabs(int... indexes) {
         mNavigationViewHolder.disableTabs(indexes);
     }
 
-    public void activeTabs(int... indexes){
+    public void activeTabs(int... indexes) {
         mNavigationViewHolder.activeTabs(indexes);
     }
 
-    public void activeAllTabs(){
+    public void activeAllTabs() {
         mNavigationViewHolder.activeAllTabs();
     }
 
-    public void disableAllTabs(){
+    public void disableAllTabs() {
         mNavigationViewHolder.disableAllTabs();
     }
 
@@ -218,4 +221,18 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
     public int getCurrentPosition() {
         return mNavigationViewHolder.getCurrentPosition();
     }
+
+    public void onSaveInstanceStateView(Bundle outState) {
+        if (outState != null) {
+            outState.putInt(EXTRA_CRR_INDEX_TAB, getCurrentPosition());
+        }
+    }
+
+    public void onRestoreInstanceStateView(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            int index = savedInstanceState.getInt(EXTRA_CRR_INDEX_TAB, 0);
+            mNavigationViewHolder.updateStateOfTabsMenu(index);
+        }
+    }
+
 }

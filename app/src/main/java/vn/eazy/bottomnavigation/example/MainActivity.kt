@@ -51,4 +51,14 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
         Log.d(TAG, "Tab is clicked")
         Log.d(TAG, "Current position : " + nav.currentPosition)
     }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        nav.onSaveInstanceStateView(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        nav.onRestoreInstanceStateView(savedInstanceState)
+    }
 }
