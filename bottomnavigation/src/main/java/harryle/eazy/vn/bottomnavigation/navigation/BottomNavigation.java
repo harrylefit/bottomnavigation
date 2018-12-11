@@ -209,7 +209,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
         }
     }
 
-    private void updateStateOfTabsMenu(int position) {
+    public void updateStateOfTabsMenu(int position) {
         mNavigationViewHolder.updateStateOfTabsMenu(position);
     }
 
