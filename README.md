@@ -33,6 +33,20 @@ repositories {
 ```
 
 
+#####  Avoiding wrong tab when activity was restarted.
+```kotlin
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        nav.onSaveInstanceStateView(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        nav.onRestoreInstanceStateView(savedInstanceState)
+    }
+```
+
+
 Download
 --------
 
