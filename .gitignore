@@ -62,3 +62,5 @@ freeline/
 freeline_project_description.json
 
 app/libs/
+/.idea/markdown-navigator.xml
+/.idea/markdown-navigator/profiles_settings.xml
