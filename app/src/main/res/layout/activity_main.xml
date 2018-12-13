@@ -22,7 +22,7 @@
         app:defaultSelectedPosition="0"
         app:inActiveColor="#80FFFFFF"
         app:mode="normal"
-        app:resMenu="@menu/nav"
         app:textFontFamily="@font/semibold"
         tools:layout_height="56dp" />
+    <!--app:resMenu="@menu/nav"-->
 </RelativeLayout>
