@@ -12,8 +12,8 @@ This library allows you to show bottom navigation **quickly** and **simply**
 Usages
 ------
 - Add Menu (Two ways)
-    - From code: BottomNavigation.setMenu(R.menu.nav)
-    - In xml: app:resMenu="@menu/nav"
+    - From code: `BottomNavigation.setMenu(R.menu.nav)`
+    - In xml: `app:resMenu="@menu/nav"`
 - Setup with viewpager : `BottomNavigation.setupWithViewPager(ViewPager)`
 - Handle listener on navigation : `BottomNavigation.setOnNavigationListener(listener)`
 - Show Navigation : `BottomNavigation.show()`
