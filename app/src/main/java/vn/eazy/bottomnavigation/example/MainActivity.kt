@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        nav.setMenu(R.menu.nav)
+//        nav.setMenu(R.menu.nav)
 
         adapter.addFragment(TestFragment.newInstance())
         adapter.addFragment(TestFragment.newInstance())

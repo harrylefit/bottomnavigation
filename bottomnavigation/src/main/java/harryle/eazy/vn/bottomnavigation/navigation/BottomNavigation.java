@@ -82,6 +82,10 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
                 mNavigationBundle.setFontFamily(ta.getResourceId(R.styleable.BottomNavigation_textFontFamily, -1));
                 mNavigationBundle.setEnableTintColor(ta.getBoolean(R.styleable.BottomNavigation_enableTintColor, true));
                 mNavigationBundle.setHasNotification(ta.getBoolean(R.styleable.BottomNavigation_hasNotification, false));
+                int resMenu = ta.getResourceId(R.styleable.BottomNavigation_resMenu, -1);
+                if (resMenu != -1) {
+                    setMenu(resMenu);
+                }
             } finally {
                 ta.recycle();
             }
@@ -218,13 +222,20 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
         Log.d("BottomNavigation", "onPageScrollStateChanged");
     }
 
-    public int getCurrentPosition() {
+    public int getCurrentPosition() throws IllegalAccessException {
+        if(mNavigationViewHolder == null){
+            throw new IllegalAccessException("You must set menu first");
+        }
         return mNavigationViewHolder.getCurrentPosition();
     }
 
     public void onSaveInstanceStateView(Bundle outState) {
         if (outState != null) {
-            outState.putInt(EXTRA_CRR_INDEX_TAB, getCurrentPosition());
+            try {
+                outState.putInt(EXTRA_CRR_INDEX_TAB, getCurrentPosition());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }
     }
 

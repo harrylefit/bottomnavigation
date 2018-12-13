@@ -29,6 +29,7 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
 
     public EazyNavigationViewHolder(Menu menu, LinearLayout view, NavigationBundle navigationBundle) {
         super(menu, view, navigationBundle);
+        if(view.isInEditMode()) return;
         if (navigationBundle.getFontFamily() != -1) {
             typeface = ResourcesCompat.getFont(view.getContext(), navigationBundle.getFontFamily());
         }
