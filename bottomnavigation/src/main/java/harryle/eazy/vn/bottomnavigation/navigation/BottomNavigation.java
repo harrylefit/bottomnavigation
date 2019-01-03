@@ -82,6 +82,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
                 mNavigationBundle.setFontFamily(ta.getResourceId(R.styleable.BottomNavigation_textFontFamily, -1));
                 mNavigationBundle.setEnableTintColor(ta.getBoolean(R.styleable.BottomNavigation_enableTintColor, true));
                 mNavigationBundle.setHasNotification(ta.getBoolean(R.styleable.BottomNavigation_hasNotification, false));
+                mNavigationBundle.setHideTitle(ta.getBoolean(R.styleable.BottomNavigation_hideTitle, false));
                 int resMenu = ta.getResourceId(R.styleable.BottomNavigation_resMenu, -1);
                 if (resMenu != -1) {
                     setMenu(resMenu);

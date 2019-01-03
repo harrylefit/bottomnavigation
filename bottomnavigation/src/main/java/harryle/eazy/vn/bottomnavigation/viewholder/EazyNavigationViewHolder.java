@@ -62,23 +62,26 @@ public class EazyNavigationViewHolder extends NavigationViewHolder<LinearLayout>
 
         lyItem.addView(ivIcon);
 
-        //Todo create Title Textview
-        tvTitle = new AppCompatTextView(view.getContext());
-        LinearLayout.LayoutParams lpTitle = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lpTitle.gravity = Gravity.CENTER;
-        tvTitle.setLayoutParams(lpTitle);
-        tvTitle.setMaxLines(1);
-        tvTitle.setEllipsize(TextUtils.TruncateAt.END);
-        if (!TextUtils.isEmpty(menuItem.getTitle())) {
-            tvTitle.setText(menuItem.getTitle());
+        if(!navigationBundle.isHideTitle()) {
+            //Todo create Title Textview
+            tvTitle = new AppCompatTextView(view.getContext());
+            LinearLayout.LayoutParams lpTitle = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lpTitle.gravity = Gravity.CENTER;
+            tvTitle.setLayoutParams(lpTitle);
+            tvTitle.setMaxLines(1);
+            tvTitle.setEllipsize(TextUtils.TruncateAt.END);
+            if (!TextUtils.isEmpty(menuItem.getTitle())) {
+                tvTitle.setText(menuItem.getTitle());
+            }
+
+            tvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, navigationBundle.getTextSize());
+            if (typeface != null) {
+                tvTitle.setTypeface(typeface);
+            }
+            frameLayout.setTag(R.id.tagTitle, tvTitle);
+            lyItem.addView(tvTitle);
         }
 
-        tvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, navigationBundle.getTextSize());
-        if (typeface != null) {
-            tvTitle.setTypeface(typeface);
-        }
-        frameLayout.setTag(R.id.tagTitle, tvTitle);
-        lyItem.addView(tvTitle);
         frameLayout.addView(lyItem);
 
         FrameLayout notificationView = (FrameLayout) LayoutInflater.from(view.getContext()).inflate(R.layout.view_tab, null);

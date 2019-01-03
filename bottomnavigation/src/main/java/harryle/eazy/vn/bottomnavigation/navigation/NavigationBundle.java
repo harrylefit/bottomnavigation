@@ -25,6 +25,7 @@ public class NavigationBundle {
     private OnNavigationListener onNavigationListener;
     private ViewPager viewPager;
     private boolean hasNotification = false;
+    private boolean hideTitle = false;
 
     public ViewPager getViewPager() {
         return viewPager;
@@ -128,5 +129,13 @@ public class NavigationBundle {
 
     public void setHasNotification(boolean hasNotification) {
         this.hasNotification = hasNotification;
+    }
+
+    public boolean isHideTitle() {
+        return hideTitle;
+    }
+
+    public void setHideTitle(boolean hideTitle) {
+        this.hideTitle = hideTitle;
     }
 }

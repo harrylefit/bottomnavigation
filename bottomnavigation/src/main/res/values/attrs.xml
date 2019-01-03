@@ -15,5 +15,6 @@
             <enum name="normal" value="1" />
         </attr>
         <attr name="hasNotification" format="boolean" />
+        <attr name="hideTitle" format="boolean" />
     </declare-styleable>
 </resources>

@@ -23,6 +23,7 @@
         app:inActiveColor="#80FFFFFF"
         app:mode="normal"
         app:textFontFamily="@font/semibold"
-        tools:layout_height="56dp" />
-    <!--app:resMenu="@menu/nav"-->
+        tools:layout_height="56dp"
+        app:hideTitle="true"
+        app:resMenu="@menu/nav"/>
 </RelativeLayout>
