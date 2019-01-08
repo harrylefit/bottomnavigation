@@ -25,5 +25,6 @@
         app:textFontFamily="@font/semibold"
         tools:layout_height="56dp"
         app:hideTitle="true"
+        app:sizeOfIcon="15dp"
         app:resMenu="@menu/nav"/>
 </RelativeLayout>

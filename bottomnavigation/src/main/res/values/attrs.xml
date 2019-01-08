@@ -16,5 +16,6 @@
         </attr>
         <attr name="hasNotification" format="boolean" />
         <attr name="hideTitle" format="boolean" />
+        <attr name="sizeOfIcon" format="dimension"/>
     </declare-styleable>
 </resources>

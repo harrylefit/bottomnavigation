@@ -77,6 +77,7 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
                 mNavigationBundle.setScrollable(ta.getBoolean(R.styleable.BottomNavigation_isScrollable, false));
                 mNavigationBundle.setBackgroundColor(ta.getColor(R.styleable.BottomNavigation_backgroundNavigation, Color.WHITE));
                 mNavigationBundle.setTextSize(ta.getDimensionPixelSize(R.styleable.BottomNavigation_textSize, NavigationHelper.dpToPx(context, 14)));
+                mNavigationBundle.setSizeOfIcon(ta.getDimensionPixelSize(R.styleable.BottomNavigation_sizeOfIcon, NavigationHelper.dpToPx(context, 10)));
                 mNavigationBundle.setDefaultSelectedPosition(ta.getInt(R.styleable.BottomNavigation_defaultSelectedPosition, 0));
                 mNavigationBundle.setMode(ta.getInt(R.styleable.BottomNavigation_mode, 1));
                 mNavigationBundle.setFontFamily(ta.getResourceId(R.styleable.BottomNavigation_textFontFamily, -1));
