@@ -18,6 +18,7 @@ public class NavigationBundle {
     private boolean enableRippleEffect = false;
     private int mode = 1;
     private boolean enableTintColor = true;
+    private int sizeOfIcon;
 
     @IdRes
     private int fontFamily;
@@ -137,5 +138,13 @@ public class NavigationBundle {
 
     public void setHideTitle(boolean hideTitle) {
         this.hideTitle = hideTitle;
+    }
+
+    public int getSizeOfIcon() {
+        return sizeOfIcon;
+    }
+
+    public void setSizeOfIcon(int sizeOfIcon) {
+        this.sizeOfIcon = sizeOfIcon;
     }
 }

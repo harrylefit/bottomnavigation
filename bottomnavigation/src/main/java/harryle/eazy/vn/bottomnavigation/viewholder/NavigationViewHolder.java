@@ -31,7 +31,7 @@ public abstract class NavigationViewHolder<V extends ViewGroup> {
         this.mMenu = menu;
         this.view = view;
         this.navigationBundle = navigationBundle;
-        sizeOfIcon = NavigationHelper.dpToPx(view.getContext(), 20);
+        sizeOfIcon = NavigationHelper.dpToPx(view.getContext(), navigationBundle.getSizeOfIcon());
         currentPosition = navigationBundle.getDefaultSelectedPosition();
     }
 
