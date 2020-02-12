@@ -143,6 +143,17 @@ public class BottomNavigation extends FrameLayout implements Navigation, ViewPag
         createMainLayout(mNavigationBundle.isScrollable());
     }
 
+    /**
+     * Example when creating Dynamic menu
+     *
+     */
+    @Override
+    public void setMenu(Menu menu) {
+        //this.mMenuRes = menuRes;
+        mMenu = menu;
+        createMainLayout(mNavigationBundle.isScrollable());
+    }
+
     @Override
     public void attachToRecyclerView(RecyclerView rv) {
     }
