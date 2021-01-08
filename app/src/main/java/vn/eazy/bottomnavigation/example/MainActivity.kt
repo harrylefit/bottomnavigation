@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
+import android.widget.PopupMenu
 import harryle.eazy.vn.bottomnavigation.navigation.BottomNavigationAdapter
 import harryle.eazy.vn.bottomnavigation.navigation.OnNavigationListener
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,7 +22,12 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        nav.setMenu(R.menu.nav)
+        menuInit() /* Example with Dynamic Menu */
+        //menu()
+    }
+
+    private fun menu() {
+        //        nav.setMenu(R.menu.nav)
 
         adapter.addFragment(TestFragment.newInstance())
         adapter.addFragment(TestFragment.newInstance())
@@ -46,7 +53,21 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
 
         nav.disableAllTabs()
     }
+    /**
+     * Example when creating Dynamic menu
+     * @see Menu.add
+     *
+     */
+    private fun menuInit() {
+        val p  = PopupMenu(this, null)
+        val dynamicMenu: Menu = p.menu
+        dynamicMenu.add(Menu.NONE, Menu.NONE, 1, "One")?.setIcon(R.drawable.ic_launcher_background)
+        dynamicMenu.add(Menu.NONE, Menu.NONE, 1, "Two")?.setIcon(R.drawable.ic_location)
+        dynamicMenu.add(Menu.NONE, Menu.NONE,0, "Three")?.setIcon(R.drawable.bg_circle_notification)
+        dynamicMenu.add(Menu.NONE, Menu.NONE, 1, "Four")?.setIcon(R.drawable.ic_profile)
 
+        nav.setMenu(dynamicMenu)
+    }
     override fun onClickNavigationItem(pos: Int) {
         Log.d(TAG, "Tab is clicked")
         Log.d(TAG, "Current position : " + nav.currentPosition)
